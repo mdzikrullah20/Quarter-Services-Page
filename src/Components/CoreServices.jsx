@@ -1,7 +1,7 @@
 import React from 'react'
 import BuyHome from '../assets/Images/Home.png'
 import RentHome from '../assets/Images/RentHome.png'
-import SellHome from '../assets/Images/SellHome.png'  
+import SellHome from '../assets/Images/sellHome.png'  
 export default function CoreServices() {
   return (
     <div className='h-auto w-full   text-[25px] bg-slate-100 pb-5 z-10 flex justify-center items-center flex-col'>
