@@ -1,55 +1,80 @@
-import React from 'react'
-import BuyHome from '../assets/Images/Home.png'
-import RentHome from '../assets/Images/RentHome.png'
-import SellHome from '../assets/Images/sellHome.png'  
+import React from 'react';
+
 export default function CoreServices() {
+  const services = [
+    {
+      id: 1,
+      title: 'Buy a home',
+      description: 'Over 1 million+ homes for sale available on the website, we can match you with a house you will want to call home.',
+      icon: 'https://haviosoft.com/bizrent/assets/images/blog/blog-1.png',
+    },
+    {
+      id: 2,
+      title: 'Rent a home',
+      description: 'Over 1 million+ homes for sale available on the website, we can match you with a house you will want to call home.',
+      icon: 'https://haviosoft.com/bizrent/assets/images/blog/blog-2.png',
+    },
+    {
+      id: 3,
+      title: 'Sell a home',
+      description: 'Over 1 million+ homes for sale available on the website, we can match you with a house you will want to call home.',
+      icon: 'https://haviosoft.com/bizrent/assets/images/blog/blog-3.png',
+    },
+    {
+      id: 4,
+      title: 'Property Management',
+      description: 'Over 1 million+ homes for sale available on the website, we can match you with a house you will want to call home.',
+      icon: 'https://haviosoft.com/bizrent/assets/images/blog/blog-widget-4.png',
+    },
+    {
+      id: 5,
+      title: 'Home Valuation',
+      description: 'Over 1 million+ homes for sale available on the website, we can match you with a house you will want to call home.',
+      icon: 'https://haviosoft.com/bizrent/assets/images/blog/blog-widget-3.png',
+    },
+    {
+      id: 6,
+      title: 'Consultation',
+      description: 'Over 1 million+ homes for sale available on the website, we can match you with a house you will want to call home.',
+      icon: 'https://haviosoft.com/bizrent/assets/images/blog/blog-widget-2.png',
+    },
+  ];
+
   return (
-    <div className='h-auto w-full   text-[25px] bg-slate-100 pb-5 z-10 flex justify-center items-center flex-col'>
-        {/* container  */}
-        <div className='w-full h-40 flex justify-center items-center flex-col mt-8 '>
-            <p className='bg-red-100 rounded-3xl p-1 px-4 text-[16px] font-bold text-red-600 '>Our Services</p>
-            <p className='text-[40px] font-bold gap-4'>Our Core Services</p>
+    <div className='w-full bg-slate-50 py-12 sm:py-16'>
+      <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+        {/* Header Section */}
+        <div className='mb-10 sm:mb-12'>
+          <h2 className='text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900'>
+            Our Core Services
+          </h2>
+          <div className="h-[2px] mt-4 animate-grow-line origin-left"></div>
         </div>
-        
-            {/* card container  */}
-                    <div className='h-auto w-[100%] flex flex-wrap  p-10 sm:p-20  gap-20 justify-center items-center  '>
-            {/* cards buy home*/}
-         <div className=' h-68 w-[300px] sm:w-[300px] drop-shadow-lg bg-white flex items-center justify-center flex-col p-12 gap-2  hover:shadow-lg'>
-            <img src={BuyHome} className='h-14 w-14'/>
-            <p className='font-bold text-[25px] transition-all ease-in duration-300 hover:text-orange-500'>Buy a home</p>
-            <p className='font-serif text-[12px] text-gray-600'>over 1 million+ homes for sale available on the website, we can match you with a house you will want to call home.</p>
-         </div>
-                  {/* cards rent home*/}
-         <div className='h-68 w-[300px] drop-shadow-lg bg-white flex items-center justify-center flex-col p-12 gap-2 hover:shadow-lg'>
-            <img src={RentHome} className='h-14 w-14'/>
-            <p className='font-bold text-[25px] transition-all ease-in duration-300 hover:text-orange-500'>Rent a home</p>
-            <p className='font-serif text-[12px] '>over 1 million+ homes for sale available on the website, we can match you with a house you will want to call home.</p>
-         </div>
-                  {/* cards Sell a home*/}
-         <div className='h-68 w-[300px] drop-shadow-lg bg-white flex items-center justify-center flex-col p-12 gap-2 hover:shadow-lg'>
-            <img src={SellHome} className='h-14 w-14'/>
-            <p className='font-bold text-[25px] transition-all ease-in duration-300 hover:text-orange-500'>Sell a home</p>
-            <p className='font-serif text-[12px] '>over 1 million+ homes for sale available on the website, we can match you with a house you will want to call home.</p>
-         </div>
-                {/* cards Sell a home*/}
-                <div className='h-68 w-[300px] drop-shadow-lg bg-white flex items-center justify-center flex-col p-12 gap-2 hover:shadow-lg'>
-            <img src={SellHome} className='h-14 w-14'/>
-            <p className='font-bold text-[25px] transition-all ease-in duration-300 hover:text-orange-500'>Sell a home</p>
-            <p className='font-serif text-[12px] '>over 1 million+ homes for sale available on the website, we can match you with a house you will want to call home.</p>
-         </div>
-                {/* cards Sell a home*/}
-                <div className='h-68 w-[300px] drop-shadow-lg bg-white flex items-center justify-center flex-col p-12 gap-2 hover:shadow-lg'>
-            <img src={SellHome} className='h-14 w-14'/>
-            <p className='font-bold text-[25px] transition-all ease-in duration-300 hover:text-orange-500'>Sell a home</p>
-            <p className='font-serif text-[12px] '>over 1 million+ homes for sale available on the website, we can match you with a house you will want to call home.</p>
-         </div>
-                {/* cards Sell a home*/}
-                <div className='h-68 w-[300px] drop-shadow-lg bg-white flex items-center justify-center flex-col p-12 gap-2 hover:shadow-lg'>
-            <img src={SellHome} className='h-14 w-14 ' />
-            <p className='font-bold text-[25px] transition-all ease-in duration-300 hover:text-orange-500'>Sell a home</p>
-            <p className='font-serif text-[12px] '>over 1 million+ homes for sale available on the website, we can match you with a house you will want to call home.</p>
-         </div>
+
+        {/* Cards Container */}
+        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
+          {services.map((service) => (
+            <div
+              key={service.id}
+              className='bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 p-6 sm:p-8 flex flex-col items-center text-center group'
+            >
+              <div className='h-20 w-20 sm:h-24 sm:w-24 mb-4 sm:mb-5 rounded-full overflow-hidden bg-gray-50 flex items-center justify-center flex-shrink-0'>
+                <img
+                  src={service.icon}
+                  alt={service.title}
+                  className='h-full w-full object-cover'
+                />
+              </div>
+              <h3 className='font-bold text-lg sm:text-xl lg:text-2xl mb-2 sm:mb-3 transition-colors duration-300 group-hover:text-orange-500'>
+                {service.title}
+              </h3>
+              <p className='text-xs sm:text-sm text-gray-600 leading-relaxed'>
+                {service.description}
+              </p>
+            </div>
+          ))}
         </div>
+      </div>
     </div>
-  )
+  );
 }

@@ -3,7 +3,7 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 import Bgimage from '../assets/Images/14.jpg'
 export default function Home() {
   return (
-    <div className=' relative w-full h-80 flex justify-center items-start flex-col bg-white'>
+    <div id='home' className=' relative w-full h-80 flex justify-center items-start flex-col bg-white'>
       <img src={Bgimage} className='w-full h-full'/>   {/*background Image  */}
       <div>
         <h2 className='font-bold text-4xl mb-2 absolute top-20 left-20'>What We Do</h2>
@@ -12,8 +12,8 @@ export default function Home() {
         <div className='text-orange-400 absolute top-40 left-20 '>
         <i class="fa-solid fa-house-chimney"></i>
         </div>
-      <p className='hover:text-orange-400 absolute top-40 left-28 flex flex-grow items-center'>Home <MdKeyboardArrowRight/></p>
-      <p className='text-black font-serif absolute top-40 left-44'>Service</p>
+      <p className='hover:text-orange-400 absolute top-40 left-28 flex flex-grow items-center cursor-pointer'>Home <MdKeyboardArrowRight/></p>
+      <p className='text-black font-serif absolute top-40 left-44 cursor-pointer'>Service</p>
       </div>
     </div>
   )

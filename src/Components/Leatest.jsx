@@ -1,91 +1,164 @@
-import React, { useState } from 'react';
-import firstslid from '../assets/Images/slid1.png';
-import secondtslid from '../assets/Images/slid2.png';
-import terdslid from '../assets/Images/slid3.png';
-import fourslid from '../assets/Images/slid4.png';
+import React, { useRef } from "react";
 import { CiCalendarDate } from "react-icons/ci";
-import { MdOutlineKeyboardArrowLeft as Left } from "react-icons/md";
-import { MdChevronRight as Right } from "react-icons/md";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
-import { useRef } from 'react';
+import { MdOutlineKeyboardArrowLeft, MdChevronRight } from "react-icons/md";
+import { FaUserTie } from "react-icons/fa";
 
-export default function Leatest() {
- const  sliderRef=useRef(null)
+export default function Latest() {
+  const sliderRef = useRef(null);
+  const [currentIndex, setCurrentIndex] = React.useState(0);
+
   const data = [
-    { 
-      image: firstslid,
-      title: '10 Brilliant Ways To Decorate Your Home ',
-      date: 'June 20, 2024',
-      more: 'READ MORE'
+    {
+      image:
+        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop",
+      title: "10 Brilliant Ways To Decorate Your Home",
+      date: "June 20, 2024",
+      category: "REAL ESTATE",
     },
     {
-      image: secondtslid,
-      title: '7 home trends that will shape your house in 2021',
-      date: 'June 24, 2023',
-      more: 'READ MORE'
+      image:
+        "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop",
+      title: "7 home trends that will shape your house in 2021",
+      date: "June 24, 2023",
+      category: "REAL ESTATE",
     },
     {
-      image: terdslid,
-      title: 'Renovating a Living Room? Experts Share Their Secrets',
-      date: 'June 20, 2024',
-      more: 'READ MORE'
+      image:
+        "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop",
+      title: "Renovating a Living Room? Experts Share Their Secrets",
+      date: "June 20, 2024",
+      category: "REAL ESTATE",
     },
     {
-      image: fourslid,
-      title: '7 home trends that will shape your house in 2021',
-      date: 'June 20, 2024',
-      more: 'READ MORE'
-    }
+      image:
+        "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&h=600&fit=crop",
+      title: "7 home trends that will shape your house in 2021",
+      date: "June 20, 2024",
+      category: "REAL ESTATE",
+    },
   ];
 
-  // Slick settings
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 300,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-   
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1) % data.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev - 1 + data.length) % data.length);
+  };
+
+  const getVisibleCards = () => {
+    const visible = [];
+    for (let i = 0; i < 3; i++) {
+      visible.push(data[(currentIndex + i) % data.length]);
+    }
+    return visible;
   };
 
   return (
-    <div>
-      {/* Card top */}
-      <div className='w-full h-40 flex justify-center items-center flex-col mt-8'>
-        <p className='bg-red-100 rounded-3xl p-1 px-4 text-[16px] font-bold text-red-600 '>News & Blogs</p>
-        <p className='text-[40px] font-bold gap-4'>Latest News Feeds</p>
+    <div className="w-full bg-white py-12">
+      {/* Header Section */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 mb-10">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900">
+          Latest News Feeds
+        </h2>
+
+        {/* The animated accent line */}
+        <div className="h-[2px] mt-4 animate-grow-line origin-left"></div>
+      </div>
+      {/* Slider Section */}
+      <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-8">
+        {/* Navigation Buttons */}
+        <button
+          onClick={prevSlide}
+          className="absolute left-0 sm:-left-4 top-1/2 -translate-y-1/2 z-20 bg-white hover:bg-orange-500 hover:text-white transition-all duration-300 rounded-full p-2 shadow-lg"
+          aria-label="Previous slide"
+        >
+          <MdOutlineKeyboardArrowLeft className="text-3xl sm:text-4xl" />
+        </button>
+
+        <button
+          onClick={nextSlide}
+          className="absolute right-0 sm:-right-4 top-1/2 -translate-y-1/2 z-20 bg-white hover:bg-orange-500 hover:text-white transition-all duration-300 rounded-full p-2 shadow-lg"
+          aria-label="Next slide"
+        >
+          <MdChevronRight className="text-3xl sm:text-4xl" />
+        </button>
+
+        {/* Cards Container */}
+        <div className="overflow-hidden">
+          {/* Mobile View - Single Card */}
+          <div className="block lg:hidden">
+            <div className="flex justify-center">
+              <NewsCard data={data[currentIndex]} />
+            </div>
+          </div>
+
+          {/* Desktop View - Three Cards */}
+          <div className="hidden lg:grid lg:grid-cols-3 gap-6">
+            {getVisibleCards().map((item, index) => (
+              <NewsCard key={index} data={item} />
+            ))}
+          </div>
+        </div>
+
+        {/* Dots Indicator */}
+        <div className="flex justify-center gap-2 mt-8">
+          {data.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                index === currentIndex ? "w-8 bg-orange-500" : "w-2 bg-gray-300"
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function NewsCard({ data }) {
+  return (
+    <div className="w-full max-w-sm mx-auto bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+      {/* Image Container */}
+      <div className="h-64 w-full overflow-hidden">
+        <img
+          src={data.image}
+          alt={data.title}
+          className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+        />
       </div>
 
-      {/* Slider Component */}
-      <div className='relative w-screen  h-100  p-4 sm:p-40'>
-     <button onClick={()=>sliderRef.current.slickPrev()}> <Left className="text-[50px] border-2 border-red-500 text-black absolute left-5 z-10 top-1/3 hover:bg-orange-600" /></button> 
-     <button onClick={()=>sliderRef.current.slickNext()}> <Right className="text-[50px]  border-2 border-red-500  text-black absolute right-5 z-10 top-1/3 hover:bg-orange-600" /></button> 
-        <Slider {...settings} ref={sliderRef} className=''>
-          {data.map((d) => (
-            <div className='h-[460px]  w-80 sm:w-screen md:flex justify-center items-center'>
-              <div className='h-25 sm:h-52  w-40 sm:w-80 overflow-hidden  '>
-                <img src={d.image} alt="slider" className="drop-shadow-lg bg-white cover-fit w-40 sm:w-80 overflow-hidden transition-transform duration-500 ease-in-out transform hover:scale-110" />
-              </div>
-              {/* container text  */}
-             <div className='h-[220px] w-40 sm:w-80  drop-shadow-lg bg-white  '>
-               {/* admin and icons  */}
-               <div className='font-serif text-red-600 flex flex-row items-center justify-center p-4 w-80 '>
-                <i className="fa-solid fa-user-tie"></i>
-                <p className='ml-2 text-[14px]  font-sans font-bold text-gray-600 hover:text-red-600'>buy:Admin</p>
-                <p className='font-bold text-[12px] text-gray-600 hover:text-red-600 pl-8 font-serif'>REAL ESTATE</p>
-              </div>
-              {/* title  */}
-              <p className=' text-[18px] flex justify-center items-center p-4 w-80  hover:text-red-600 __Nunito_Sans_601d73 ltn__blog-title font-bold '>{d.title}</p>
-              <div className='h-12 w-64 border-t-2 border-gray-200  p-4 pr-8 flex items-center flex-row m-4'>
-                <p className='w-80 h-12 flex items-center gap-1 font-[9px] flex-row'><CiCalendarDate />{d.date}</p>
-                <p className='w-full font-bold text-[12px] text-red-600  font-serif'>{d.more}</p>
-              </div>
-             </div>
-            </div>
-          ))}
-        </Slider>
+      {/* Content Container */}
+      <div className="p-6">
+        {/* Meta Info */}
+        <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
+          <div className="flex items-center gap-2 hover:text-red-600 transition-colors cursor-pointer">
+            <FaUserTie className="text-red-500" />
+            <span className="font-semibold">Admin</span>
+          </div>
+          <span className="font-semibold hover:text-red-600 transition-colors cursor-pointer">
+            {data.category}
+          </span>
+        </div>
+
+        {/* Title */}
+        <h3 className="text-lg sm:text-xl font-bold mb-4 hover:text-red-600 transition-colors cursor-pointer line-clamp-2">
+          {data.title}
+        </h3>
+
+        {/* Footer */}
+        <div className="flex items-center justify-between pt-4 border-t border-gray-200">
+          <div className="flex items-center gap-2 text-sm text-gray-600">
+            <CiCalendarDate className="text-lg" />
+            <span>{data.date}</span>
+          </div>
+          <button className="text-sm font-bold text-red-600 hover:text-red-700 transition-colors">
+            READ MORE
+          </button>
+        </div>
       </div>
     </div>
   );
