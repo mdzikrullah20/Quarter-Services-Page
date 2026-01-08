@@ -186,7 +186,7 @@ Message: ${formData.message}`;
                 </div>
                 <div className='flex items-center gap-3'>
                   <MdEmail className='text-orange-500 text-xl flex-shrink-0' />
-                  <span className='text-sm'>info@realestate.com</span>
+                  <span className='text-sm'>info@quarter.com</span>
                 </div>
                 <div className='flex items-start gap-3'>
                   <MdLocationOn className='text-orange-500 text-xl flex-shrink-0 mt-1' />
