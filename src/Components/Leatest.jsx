@@ -12,28 +12,28 @@ export default function Latest() {
       image:
         "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop",
       title: "10 Brilliant Ways To Decorate Your Home",
-      date: "June 20, 2024",
+      date: "June 20, 2025",
       category: "REAL ESTATE",
     },
     {
       image:
         "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop",
       title: "7 home trends that will shape your house in 2021",
-      date: "June 24, 2023",
+      date: "June 24, 2025",
       category: "REAL ESTATE",
     },
     {
       image:
         "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop",
       title: "Renovating a Living Room? Experts Share Their Secrets",
-      date: "June 20, 2024",
+      date: "June 29, 2024",
       category: "REAL ESTATE",
     },
     {
       image:
         "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&h=600&fit=crop",
       title: "7 home trends that will shape your house in 2021",
-      date: "June 20, 2024",
+      date: "Jan 01, 2026",
       category: "REAL ESTATE",
     },
   ];

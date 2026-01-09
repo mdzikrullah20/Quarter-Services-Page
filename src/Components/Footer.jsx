@@ -23,7 +23,6 @@ export default function Footer() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Create WhatsApp message
     const message = `Hello! I'm interested in getting a quote.
     
 Name: ${formData.name}
@@ -32,10 +31,9 @@ Phone: ${formData.phone}
 Property Type: ${formData.propertyType}
 Message: ${formData.message}`;
     
-    const whatsappUrl = `https://wa.me/1234567890?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/918084872966?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
     
-    // Reset form   
     setFormData({
       name: '',
       email: '',
@@ -50,30 +48,41 @@ Message: ${formData.message}`;
     <>
       {/* Floating WhatsApp Button */}
       <a
-        href='https://wa.me/8084872966'
+        href='https://wa.me/918084872966'
         target='_blank'
         rel='noopener noreferrer'
-        className='fixed bottom-24 right-8 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-all duration-300 z-50'
+        className='fixed bottom-20 sm:bottom-24 right-4 sm:right-8 bg-green-500 hover:bg-green-600 text-white p-3 sm:p-4 rounded-full shadow-2xl hover:scale-110 transition-all duration-300 z-50'
         aria-label='Chat on WhatsApp'
       >
-        <FaWhatsapp className='text-2xl' />
+        <FaWhatsapp className='text-xl sm:text-2xl' />
       </a>
 
       {/* Get Best Quote Button */}
       <button
         onClick={() => setIsQuoteFormOpen(!isQuoteFormOpen)}
-        className='fixed bottom-8 right-8 bg-orange-500 hover:bg-orange-600 text-white px-4 py-4 rounded-full shadow-2xl hover:scale-110 transition-all duration-300 z-50'
+        className='fixed bottom-4 sm:bottom-8 right-4 sm:right-8 bg-orange-500 hover:bg-orange-600 text-white px-3 py-3 sm:px-4 sm:py-4 rounded-full shadow-2xl hover:scale-110 transition-all duration-300 z-50'
       >
-        <BiMessageRoundedDots className='text-2xl' />
+        <BiMessageRoundedDots className='text-xl sm:text-2xl' />
       </button>
 
-      {/* Quote Form Popup - Left Bottom */}
+      {/* Quote Form Popup - Responsive */}
       {isQuoteFormOpen && (
-        <div className='fixed bottom-8 left-8 w-full max-w-md bg-white rounded-2xl shadow-2xl z-50 animate-slide-up border-2'>
-          {/* Form Body */}
-          <form onSubmit={handleSubmit} className='p-6 space-y-4 max-h-96 overflow-y-auto'>
+        <div className='fixed inset-x-4 bottom-4 sm:inset-x-auto sm:bottom-8 sm:left-8 sm:w-full sm:max-w-md bg-white rounded-2xl shadow-2xl z-50 border-2 max-h-[calc(100vh-100px)] overflow-hidden flex flex-col'>
+          {/* Form Header */}
+          <div className='flex items-center justify-between p-4 sm:p-6 border-b border-gray-200 flex-shrink-0'>
+            <h3 className='text-lg sm:text-xl font-bold text-gray-800'>Get Best Quote</h3>
+            <button
+              onClick={() => setIsQuoteFormOpen(false)}
+              className='text-gray-500 hover:text-gray-700 p-1'
+            >
+              <IoMdClose className='text-2xl' />
+            </button>
+          </div>
+
+          {/* Form Body - Scrollable */}
+          <div className='p-4 sm:p-6 space-y-3 sm:space-y-4 overflow-y-auto flex-1'>
             <div>
-              <label className='block text-sm font-semibold text-gray-700 mb-2'>
+              <label className='block text-xs sm:text-sm font-semibold text-gray-700 mb-1 sm:mb-2'>
                 Your Name *
               </label>
               <input
@@ -83,12 +92,12 @@ Message: ${formData.message}`;
                 onChange={handleInputChange}
                 required
                 placeholder='Enter your name'
-                className='w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500 transition-colors'
+                className='w-full px-3 sm:px-4 py-2 sm:py-3 text-sm border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500 transition-colors'
               />
             </div>
 
             <div>
-              <label className='block text-sm font-semibold text-gray-700 mb-2'>
+              <label className='block text-xs sm:text-sm font-semibold text-gray-700 mb-1 sm:mb-2'>
                 Email Address *
               </label>
               <input
@@ -98,12 +107,12 @@ Message: ${formData.message}`;
                 onChange={handleInputChange}
                 required
                 placeholder='Enter your email'
-                className='w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500 transition-colors'
+                className='w-full px-3 sm:px-4 py-2 sm:py-3 text-sm border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500 transition-colors'
               />
             </div>
 
             <div>
-              <label className='block text-sm font-semibold text-gray-700 mb-2'>
+              <label className='block text-xs sm:text-sm font-semibold text-gray-700 mb-1 sm:mb-2'>
                 Phone Number *
               </label>
               <input
@@ -113,12 +122,12 @@ Message: ${formData.message}`;
                 onChange={handleInputChange}
                 required
                 placeholder='Enter your phone'
-                className='w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500 transition-colors'
+                className='w-full px-3 sm:px-4 py-2 sm:py-3 text-sm border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500 transition-colors'
               />
             </div>
 
             <div>
-              <label className='block text-sm font-semibold text-gray-700 mb-2'>
+              <label className='block text-xs sm:text-sm font-semibold text-gray-700 mb-1 sm:mb-2'>
                 Property Type *
               </label>
               <select
@@ -126,7 +135,7 @@ Message: ${formData.message}`;
                 value={formData.propertyType}
                 onChange={handleInputChange}
                 required
-                className='w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500 transition-colors'
+                className='w-full px-3 sm:px-4 py-2 sm:py-3 text-sm border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500 transition-colors'
               >
                 <option value=''>Select property type</option>
                 <option value='Buy'>Buy a Home</option>
@@ -137,7 +146,7 @@ Message: ${formData.message}`;
             </div>
 
             <div>
-              <label className='block text-sm font-semibold text-gray-700 mb-2'>
+              <label className='block text-xs sm:text-sm font-semibold text-gray-700 mb-1 sm:mb-2'>
                 Message
               </label>
               <textarea
@@ -146,17 +155,17 @@ Message: ${formData.message}`;
                 onChange={handleInputChange}
                 rows='3'
                 placeholder='Tell us about your requirements'
-                className='w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500 transition-colors resize-none'
+                className='w-full px-3 sm:px-4 py-2 sm:py-3 text-sm border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500 transition-colors resize-none'
               ></textarea>
             </div>
 
             <button
-              type='submit'
-              className='w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-lg transition-colors flex items-center justify-center gap-2'
+              onClick={handleSubmit}
+              className='w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-2.5 sm:py-3 text-sm sm:text-base rounded-lg transition-colors flex items-center justify-center gap-2'
             >
               Send Message
             </button>
-          </form>
+          </div>
         </div>
       )}
 
@@ -170,19 +179,19 @@ Message: ${formData.message}`;
 
       <footer className='w-full bg-gray-900 text-gray-300'>
         {/* Main Footer Content */}
-        <div className='max-w-7xl mx-auto px-4 sm:px-8 py-16'>
-          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
+        <div className='max-w-7xl mx-auto px-4 sm:px-8 py-12 sm:py-16'>
+          <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8'>
             {/* About Section */}
             <div>
-              <h3 className='text-white text-xl font-bold mb-6'>About Us</h3>
-              <p className='text-gray-400 text-sm leading-relaxed mb-6'>
+              <h3 className='text-white text-lg sm:text-xl font-bold mb-4 sm:mb-6'>About Us</h3>
+              <p className='text-gray-400 text-sm leading-relaxed mb-4 sm:mb-6'>
                 We are a real estate company dedicated to helping you find your dream home. 
                 With over 1 million+ properties, we make it easy to buy, sell, or rent.
               </p>
               <div className='space-y-3'>
                 <div className='flex items-center gap-3'>
                   <MdPhone className='text-orange-500 text-xl flex-shrink-0' />
-                  <span className='text-sm'>+1 (234) 567-8900</span>
+                  <span className='text-sm'>+91 8084872966</span>
                 </div>
                 <div className='flex items-center gap-3'>
                   <MdEmail className='text-orange-500 text-xl flex-shrink-0' />
@@ -197,7 +206,7 @@ Message: ${formData.message}`;
 
             {/* Quick Links */}
             <div>
-              <h3 className='text-white text-xl font-bold mb-6'>Quick Links</h3>
+              <h3 className='text-white text-lg sm:text-xl font-bold mb-4 sm:mb-6'>Quick Links</h3>
               <ul className='space-y-3'>
                 <li>
                   <a href='/' className='flex items-center gap-2 text-sm hover:text-orange-500 transition-colors group'>
@@ -234,7 +243,7 @@ Message: ${formData.message}`;
 
             {/* Services */}
             <div>
-              <h3 className='text-white text-xl font-bold mb-6'>Our Services</h3>
+              <h3 className='text-white text-lg sm:text-xl font-bold mb-4 sm:mb-6'>Our Services</h3>
               <ul className='space-y-3'>
                 <li>
                   <a href='/' className='flex items-center gap-2 text-sm hover:text-orange-500 transition-colors group'>
@@ -271,7 +280,7 @@ Message: ${formData.message}`;
 
             {/* Newsletter */}
             <div>
-              <h3 className='text-white text-xl font-bold mb-6'>Newsletter</h3>
+              <h3 className='text-white text-lg sm:text-xl font-bold mb-4 sm:mb-6'>Newsletter</h3>
               <p className='text-gray-400 text-sm mb-4'>
                 Subscribe to our newsletter to get the latest updates and offers.
               </p>
@@ -279,9 +288,9 @@ Message: ${formData.message}`;
                 <input
                   type='email'
                   placeholder='Your email address'
-                  className='w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-orange-500 transition-colors text-sm text-white'
+                  className='w-full px-4 py-2.5 sm:py-3 text-sm bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-orange-500 transition-colors text-white'
                 />
-                <button className='w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 rounded-lg transition-colors'>
+                <button className='w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2.5 sm:py-3 text-sm rounded-lg transition-colors'>
                   Subscribe Now
                 </button>
               </div>
@@ -290,17 +299,17 @@ Message: ${formData.message}`;
               <div className='mt-6'>
                 <h4 className='text-white text-sm font-semibold mb-4'>Follow Us</h4>
                 <div className='flex gap-3'>
-                  <a href='/' className='bg-gray-800 hover:bg-orange-500 p-3 rounded-lg transition-colors'>
-                    <FaFacebookF className='text-lg' />
+                  <a href='/' className='bg-gray-800 hover:bg-orange-500 p-2.5 sm:p-3 rounded-lg transition-colors'>
+                    <FaFacebookF className='text-base sm:text-lg' />
                   </a>
-                  <a href='/' className='bg-gray-800 hover:bg-orange-500 p-3 rounded-lg transition-colors'>
-                    <FaTwitter className='text-lg' />
+                  <a href='/' className='bg-gray-800 hover:bg-orange-500 p-2.5 sm:p-3 rounded-lg transition-colors'>
+                    <FaTwitter className='text-base sm:text-lg' />
                   </a>
-                  <a href='/' className='bg-gray-800 hover:bg-orange-500 p-3 rounded-lg transition-colors'>
-                    <FaInstagram className='text-lg' />
+                  <a href='/' className='bg-gray-800 hover:bg-orange-500 p-2.5 sm:p-3 rounded-lg transition-colors'>
+                    <FaInstagram className='text-base sm:text-lg' />
                   </a>
-                  <a href='/' className='bg-gray-800 hover:bg-orange-500 p-3 rounded-lg transition-colors'>
-                    <FaLinkedin className='text-lg' />
+                  <a href='/' className='bg-gray-800 hover:bg-orange-500 p-2.5 sm:p-3 rounded-lg transition-colors'>
+                    <FaLinkedin className='text-base sm:text-lg' />
                   </a>
                 </div>
               </div>
@@ -312,8 +321,8 @@ Message: ${formData.message}`;
         <div className='border-t border-gray-800'>
           <div className='max-w-7xl mx-auto px-4 sm:px-8 py-6'>
             <div className='flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400'>
-              <p>© 2024 Real Estate. All rights reserved.</p>
-              <div className='flex gap-6'>
+              <p className='text-xs sm:text-sm text-center md:text-left'>© 2024 Real Estate. All rights reserved.</p>
+              <div className='flex flex-wrap justify-center gap-4 sm:gap-6 text-xs sm:text-sm'>
                 <a href='/' className='hover:text-orange-500 transition-colors'>Privacy Policy</a>
                 <a href='/' className='hover:text-orange-500 transition-colors'>Terms of Service</a>
                 <a href='/' className='hover:text-orange-500 transition-colors'>Cookie Policy</a>

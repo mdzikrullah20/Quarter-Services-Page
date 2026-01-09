@@ -24,18 +24,6 @@ function NavTop() {
           </p>
         </div>
       </div>
-
-      {/* <div className='flex flex-row items-center gap-4 mt-2 sm:mt-0'>
-        <div className='text-white flex flex-row items-center gap-4 text-base sm:text-lg cursor-poin    ter'>
-          <FaFacebookF className='hover:text-orange-500 transition-colors' />
-          <FaTwitter className='hover:text-orange-500 transition-colors' />
-          <FaInstagram className='hover:text-orange-500 transition-colors' />
-          <FaLinkedin className='hover:text-orange-500 transition-colors' />
-        </div>
-        <button className='bg-orange-500 hover:bg-orange-700 transition-colors px-4 py-2 font-sans text-xs sm:text-sm text-white rounded-lg whitespace-nowrap'>
-          Add Listing
-        </button>
-      </div> */}
     </div>
   );
 }

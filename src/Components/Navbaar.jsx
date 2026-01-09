@@ -4,6 +4,7 @@ import { CgSearch } from "react-icons/cg";
 import { RiAdminFill } from "react-icons/ri";
 import { FaShoppingCart } from "react-icons/fa";
 import { HiMenu, HiX } from "react-icons/hi";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,19 +21,19 @@ function Navbar() {
       </div>
 
       {/* Desktop Menu */}
-      <div className='hidden md:flex h-20 w-[500px]'>
-        <ul className='flex flex-row items-center justify-around font-bold text-lg w-full cursor-pointer'>
-          <li className='hover:text-orange-500 transition-colors'>Home</li>
-          <li className='hover:text-orange-500 transition-colors'>About</li>
-          <li className='hover:text-orange-500 transition-colors'>Property</li>
-          <li className='hover:text-orange-500 transition-colors'>News</li>
-          <li className='hover:text-orange-500 transition-colors'>Pages</li>
-          <li className='hover:text-orange-500 transition-colors'>Contact</li>
-        </ul>
-      </div>
+     <div className='hidden md:flex h-20 w-[500px]'>
+  <ul className='flex flex-row items-center justify-around font-bold text-lg w-full cursor-pointer'>
+    <Link to="/" className='hover:text-orange-500 transition-colors'>Home</Link>
+    <Link to="/about" className='hover:text-orange-500 transition-colors'>About</Link>
+    <Link to="/property" className='hover:text-orange-500 transition-colors'>Property</Link>
+    <Link to="/news" className='hover:text-orange-500 transition-colors'>News</Link>
+    <Link to="/pages" className='hover:text-orange-500 transition-colors'>Pages</Link>
+    <Link to="/contact" className='hover:text-orange-500 transition-colors'>Contact</Link>
+  </ul>
+</div>
 
       {/* Icons and Mobile Menu Button */}
-      <div className='flex flex-row items-center justify-center gap-4'>
+      <div className='flex flex-row items-center justify-center gap-2'>
         <button className='h-10 w-10 bg-white hover:bg-orange-500 hover:text-white transition-colors flex items-center justify-center text-xl rounded'>
           <CgSearch />
         </button>
@@ -57,7 +58,7 @@ function Navbar() {
         <div className='md:hidden absolute top-20 left-0 w-full bg-white shadow-lg border-t z-20'>
           <ul className='flex flex-col items-center justify-center py-6 gap-4 font-bold text-lg cursor-pointer'>
             <li className='hover:text-orange-500 transition-colors py-2' onClick={() => setIsMenuOpen(false)}>Home</li>
-            <li className='hover:text-orange-500 transition-colors py-2' onClick={() => setIsMenuOpen(false)}>About</li>
+            <Link to="/about" className='hover:text-orange-500 transition-colors py-2' onClick={() => setIsMenuOpen(false)}>About</Link>
             <li className='hover:text-orange-500 transition-colors py-2' onClick={() => setIsMenuOpen(false)}>Property</li>
             <li className='hover:text-orange-500 transition-colors py-2' onClick={() => setIsMenuOpen(false)}>News</li>
             <li className='hover:text-orange-500 transition-colors py-2' onClick={() => setIsMenuOpen(false)}>Pages</li>

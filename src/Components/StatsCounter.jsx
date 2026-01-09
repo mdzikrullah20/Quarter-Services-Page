@@ -18,7 +18,7 @@ export default function StatsCounter() {
           setIsVisible(true);
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.2 }
     );
 
     if (sectionRef.current) {
@@ -35,7 +35,7 @@ export default function StatsCounter() {
   return (
     <div 
       ref={sectionRef}
-      className='relative w-full h-96 bg-cover bg-center bg-no-repeat flex items-center justify-center'
+      className='relative w-full min-h-[500px] sm:min-h-[600px] lg:h-96 bg-cover bg-center bg-no-repeat flex items-center justify-center py-12 sm:py-16 lg:py-0 z-0'
       style={{
         backgroundImage: `url('https://haviosoft.com/bizrent/assets/images/fun-fact.png')`,
       }}
@@ -44,8 +44,8 @@ export default function StatsCounter() {
       <div className='absolute inset-0 bg-black/50 backdrop-blur-sm'></div>
 
       {/* Stats Container */}
-      <div className='relative z-10 w-full max-w-7xl px-4 sm:px-8'>
-        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6'>
+      <div className='relative z-10 w-full max-w-7xl px-4 sm:px-6 lg:px-8'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6'>
           {stats.map((stat, index) => (
             <StatCard 
               key={index} 
@@ -91,11 +91,11 @@ function StatCard({ end, label, suffix = '', isVisible, delay }) {
   }, [isVisible, end, delay]);
 
   return (
-    <div className='bg-white/10 backdrop-blur-md rounded-2xl p-8 text-center border border-white/20 hover:bg-white/20 transition-all duration-300 shadow-xl'>
-      <h3 className='text-5xl sm:text-6xl font-bold text-white mb-3'>
+    <div className='bg-white/10 backdrop-blur-md rounded-xl sm:rounded-2xl p-6 sm:p-8 text-center border border-white/20 hover:bg-white/20 transition-all duration-300 shadow-xl'>
+      <h3 className='text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-2 sm:mb-3'>
         {count}{suffix}
       </h3>
-      <p className='text-lg sm:text-xl text-white/90 font-medium'>
+      <p className='text-base sm:text-lg lg:text-xl text-white/90 font-medium leading-tight'>
         {label}
       </p>
     </div>

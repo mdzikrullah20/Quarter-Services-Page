@@ -18,25 +18,25 @@ export default function CoreServices() {
       id: 3,
       title: 'Sell a home',
       description: 'Over 1 million+ homes for sale available on the website, we can match you with a house you will want to call home.',
-      icon: 'https://haviosoft.com/bizrent/assets/images/blog/blog-3.png',
+      icon: 'https://plus.unsplash.com/premium_photo-1671358689953-ee06a6671fce?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTd8fGhvdXNlfGVufDB8fDB8fHww',
     },
     {
       id: 4,
       title: 'Property Management',
       description: 'Over 1 million+ homes for sale available on the website, we can match you with a house you will want to call home.',
-      icon: 'https://haviosoft.com/bizrent/assets/images/blog/blog-widget-4.png',
+      icon: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aG91c2V8ZW58MHx8MHx8fDA%3D',
     },
     {
       id: 5,
       title: 'Home Valuation',
       description: 'Over 1 million+ homes for sale available on the website, we can match you with a house you will want to call home.',
-      icon: 'https://haviosoft.com/bizrent/assets/images/blog/blog-widget-3.png',
+      icon: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG91c2V8ZW58MHx8MHx8fDA%3D',
     },
     {
       id: 6,
       title: 'Consultation',
       description: 'Over 1 million+ homes for sale available on the website, we can match you with a house you will want to call home.',
-      icon: 'https://haviosoft.com/bizrent/assets/images/blog/blog-widget-2.png',
+      icon: 'https://plus.unsplash.com/premium_photo-1661915661139-5b6a4e4a6fcc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aG91c2V8ZW58MHx8MHx8fDA%3D',
     },
   ];
 
