@@ -4,9 +4,6 @@ import { MdOutlineKeyboardArrowLeft, MdChevronRight } from "react-icons/md";
 import { FaUserTie } from "react-icons/fa";
 
 export default function Latest() {
-  const sliderRef = useRef(null);
-  const [currentIndex, setCurrentIndex] = React.useState(0);
-
   const data = [
     {
       image:
