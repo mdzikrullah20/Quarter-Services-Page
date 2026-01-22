@@ -148,12 +148,6 @@ export default function News() {
     },
   ];
 
-  const categories = [
-    { name: "Market Trends", icon: TrendingUp, count: 24 },
-    { name: "Buying Guide", icon: Home, count: 18 },
-    { name: "Rental Market", icon: DollarSign, count: 15 },
-    { name: "Investment", icon: TrendingUp, count: 12 },
-  ];
 
   return (
     <div className="min-h-screen bg-gray-50">

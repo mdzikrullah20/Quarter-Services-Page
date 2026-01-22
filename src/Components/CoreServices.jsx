@@ -48,7 +48,7 @@ export default function CoreServices() {
           <h2 className='text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900'>
             Our Core Services
           </h2>
-          <div className="h-[2px] mt-4 animate-grow-line origin-left"></div>
+          <div className="h-[2px] mt-4 bg-gradient-to-r from-orange-500 to-transparent w-32"></div>
         </div>
 
         {/* Cards Container */}
@@ -56,13 +56,13 @@ export default function CoreServices() {
           {services.map((service) => (
             <div
               key={service.id}
-              className='bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 p-6 sm:p-8 flex flex-col items-center text-center group'
+              className='bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 p-6 sm:p-8 flex flex-col items-center text-center group cursor-pointer transform hover:-translate-y-2'
             >
-              <div className='h-20 w-20 sm:h-24 sm:w-24 mb-4 sm:mb-5 rounded-full overflow-hidden bg-gray-50 flex items-center justify-center flex-shrink-0'>
+              <div className='h-20 w-20 sm:h-24 sm:w-24 mb-4 sm:mb-5 rounded-full overflow-hidden bg-gray-50 flex items-center justify-center flex-shrink-0 group-hover:ring-4 group-hover:ring-orange-200 transition-all duration-300'>
                 <img
                   src={service.icon}
                   alt={service.title}
-                  className='h-full w-full object-cover'
+                  className='h-full w-full object-cover group-hover:scale-110 transition-transform duration-300'
                 />
               </div>
               <h3 className='font-bold text-lg sm:text-xl lg:text-2xl mb-2 sm:mb-3 transition-colors duration-300 group-hover:text-orange-500'>

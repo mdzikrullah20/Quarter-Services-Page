@@ -12,6 +12,8 @@ export default function StatsCounter() {
   ];
 
   useEffect(() => {
+    const currentSection = sectionRef.current; // Store ref value in variable
+    
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -21,16 +23,16 @@ export default function StatsCounter() {
       { threshold: 0.2 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    if (currentSection) {
+      observer.observe(currentSection);
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      if (currentSection) {
+        observer.unobserve(currentSection); // Use stored variable
       }
     };
-  }, []);
+  }, []); // Empty dependency array is correct here
 
   return (
     <div 

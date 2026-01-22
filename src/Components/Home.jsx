@@ -1,12 +1,8 @@
 import React from 'react'
-import firstImage from "../assets/Images/11.jpg";
-import SecoundImg from "../assets/Images/12.jpg";
-import TherdImg from "../assets/Images/13.jpg";
 import { LuBedDouble } from "react-icons/lu";
 import { PiBathtubLight } from "react-icons/pi";
 import { IoCarOutline } from "react-icons/io5";
 import { FaVectorSquare } from "react-icons/fa";
-import RightImg from "../assets/Images/left.png";
 export default function Home() {
   return (
     <>
