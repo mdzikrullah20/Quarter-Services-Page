@@ -32,6 +32,9 @@ export default function About() {
       description: 'White-glove service from start to finish, making your real estate journey smooth and stress-free.'
     }
   ];
+    const handleWhatsAppClick = () => { 
+    window.open('https://wa.me/918084872966', '_blank');
+  };
 
   return (
     <div className="w-full bg-white">
@@ -186,7 +189,7 @@ export default function About() {
       </div>
 
       {/* CTA Section */}
-      <div className="w-full py-20 px-4 bg-gradient-to-r from-blue-900 to-blue-800">
+      <div className="w-full py-20 px-4 bg-sky-950 to-blue-800">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
             Ready to Get Started?
@@ -194,7 +197,9 @@ export default function About() {
           <p className="text-white text-xl mb-8 font-light">
             Let's discuss how Quarter can help you achieve your real estate goals
           </p>
-          <button className="bg-orange-500 hover:bg-orange-600 text-white font-bold text-lg px-12 py-4 rounded-full transition-colors shadow-lg">
+          <button 
+          onclick={handleWhatsAppClick}
+          className="bg-orange-500 hover:bg-orange-600 text-white font-bold text-lg px-12 py-4 rounded-full transition-colors shadow-lg">
             Contact Us Today
           </button>
         </div>

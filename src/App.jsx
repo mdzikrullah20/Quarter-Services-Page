@@ -4,7 +4,9 @@ import About from "./Components/About";
 import Navbaar from "./Components/Navbaar";
 import NavTop from "./Components/NavTop";
 import Footer from "./Components/Footer";
-
+import News from "./Components/news";
+import Contact from "./Components/Contact";
+import Property from "./Components/Property";
 function App() {
   return (
     <>
@@ -13,11 +15,12 @@ function App() {
         <Routes>
           <Route path="/" element={<Services />} />
           <Route path="/about" element={<About />} />
-          {/* <Route path="/property" element={<Property />} /> */}
+          <Route path="/property" element={<Property />} />
+          <Route path="news" element={<News/>}/>
+          <Route path="contact" element={<Contact />} />    
         </Routes>
       <Footer />
     </>
   );
 }
-
 export default App;

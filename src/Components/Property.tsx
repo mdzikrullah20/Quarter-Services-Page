@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { LuBedDouble } from 'react-icons/lu';
 import { PiBathtubLight } from 'react-icons/pi';
 import { IoCarOutline, IoLocationOutline } from 'react-icons/io5';
-import { FaVectorSquare } from 'react-icons/fa';
+import { FaVectorSquare, FaWhatsapp } from 'react-icons/fa';
 import { MdFavorite, MdFavoriteBorder } from 'react-icons/md';
 
 export default function Property() {
@@ -18,15 +18,19 @@ export default function Property() {
   ];
 
   const toggleFavorite = (id: number) => {
-    setFavorites(prev => 
-      prev.includes(id) ? prev.filter(f => f !== id) : [...prev, id]
-    );
+    // setFavorites(prev => 
+    //   prev.includes(id) ? prev.filter(f => f !== id) : [...prev, id]
+    // );
+  };
+
+  const handleWhatsAppClick = () => { 
+    window.open('https://wa.me/918084872966', '_blank');
   };
 
   return (
     <div className="w-full bg-white">
       {/* Hero */}
-      <div className='relative w-full h-80 flex justify-center items-center bg-cover bg-center' style={{ backgroundImage: "url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1600&h=900&fit=crop')" }}>
+      <div className='relative w-full h-80 flex justify-center items-center bg-cover bg-center' style={{ backgroundImage: "url('https://plus.unsplash.com/premium_photo-1754218806402-1af722866ef1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" }}>
         <div className="absolute inset-0 bg-black/60" />
         <div className="relative z-10 text-center text-white px-4">
           <h1 className="text-5xl lg:text-6xl font-bold mb-4">Our Properties</h1>
@@ -70,11 +74,25 @@ export default function Property() {
         </div>
       </div>
 
+      {/* Floating WhatsApp Button */}
+      <button
+        onClick={handleWhatsAppClick}
+        className='fixed bottom-20 sm:bottom-24 right-4 sm:right-8 bg-green-500 hover:bg-green-600 text-white p-3 sm:p-4 rounded-full shadow-2xl hover:scale-110 transition-all duration-300 z-50'
+        aria-label='Chat on WhatsApp'
+      >
+        <FaWhatsapp className='text-xl sm:text-2xl' />
+      </button>
+
       {/* CTA */}
-      <div className="w-full py-20 px-4 bg-gradient-to-r from-blue-900 to-blue-800 text-center">
+      <div className="w-full py-20 px-4 bg-sky-950 text-center">
         <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Need Help Finding a Property?</h2>
         <p className="text-white text-xl mb-8">Let our experts guide you</p>
-        <button className="bg-orange-500 hover:bg-orange-600 text-white font-bold text-lg px-12 py-4 rounded-full transition-shadow shadow-lg">Contact Us</button>
+        <button 
+          onClick={handleWhatsAppClick}
+          className="bg-orange-500 hover:bg-orange-600 text-white font-bold text-lg px-12 py-4 rounded-full transition-shadow shadow-lg hover:shadow-xl"
+        >
+          Contact Us
+        </button>
       </div>
     </div>
   );

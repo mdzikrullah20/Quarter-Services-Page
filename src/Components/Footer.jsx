@@ -203,9 +203,8 @@ Message: ${formData.message}`;
                 </div>
               </div>
             </div>
-
             {/* Quick Links */}
-            <div>
+            <div className=''>
               <h3 className='text-white text-lg sm:text-xl font-bold mb-4 sm:mb-6'>Quick Links</h3>
               <ul className='space-y-3'>
                 <li>
@@ -240,7 +239,6 @@ Message: ${formData.message}`;
                 </li>
               </ul>
             </div>
-
             {/* Services */}
             <div>
               <h3 className='text-white text-lg sm:text-xl font-bold mb-4 sm:mb-6'>Our Services</h3>
@@ -277,8 +275,7 @@ Message: ${formData.message}`;
                 </li>
               </ul>
             </div>
-
-            {/* Newsletter */}
+                  {/* Newsletter */}
             <div>
               <h3 className='text-white text-lg sm:text-xl font-bold mb-4 sm:mb-6'>Newsletter</h3>
               <p className='text-gray-400 text-sm mb-4'>
@@ -287,12 +284,12 @@ Message: ${formData.message}`;
               <div className='space-y-3'>
                 <input
                   type='email'
-                  placeholder='Your email address'
+                  placeholder='Your email address'  
                   className='w-full px-4 py-2.5 sm:py-3 text-sm bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-orange-500 transition-colors text-white'
                 />
                 <button className='w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2.5 sm:py-3 text-sm rounded-lg transition-colors'>
                   Subscribe Now
-                </button>
+                </button>           
               </div>
               
               {/* Social Media */}
