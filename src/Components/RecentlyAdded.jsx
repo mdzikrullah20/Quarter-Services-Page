@@ -81,7 +81,7 @@ export default function RecentlyAdded() {
           <h2 className='text-4xl sm:text-5xl font-bold text-gray-900'>
           Recently Added
         </h2>
-          <div className="h-[2px] mt-4 animate-grow-line origin-left"></div>
+             <div className="h-[2px] mt-4 bg-gradient-to-r from-orange-500 to-transparent w-32"></div>
         </div>
 
         {/* Property Grid */}

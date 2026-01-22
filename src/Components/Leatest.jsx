@@ -1,9 +1,12 @@
-import React, { useRef } from "react";
+import { useState, useEffect } from 'react';
 import { CiCalendarDate } from "react-icons/ci";
 import { MdOutlineKeyboardArrowLeft, MdChevronRight } from "react-icons/md";
 import { FaUserTie } from "react-icons/fa";
 
 export default function Latest() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAutoPlay, setIsAutoPlay] = useState(true);
+
   const data = [
     {
       image:
@@ -35,21 +38,35 @@ export default function Latest() {
     },
   ];
 
+  // Auto-play carousel
+  useEffect(() => {
+    if (!isAutoPlay) return;
+    
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % data.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [isAutoPlay, data.length]);
+
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % data.length);
+    setIsAutoPlay(false);
   };
 
   const prevSlide = () => {
     setCurrentIndex((prev) => (prev - 1 + data.length) % data.length);
+    setIsAutoPlay(false);
   };
 
-  const getVisibleCards = () => {
-    const visible = [];
-    for (let i = 0; i < 3; i++) {
-      visible.push(data[(currentIndex + i) % data.length]);
-    }
-    return visible;
-  };
+  // Remove this function as it's not being used
+  // const getVisibleCards = () => {
+  //   const visible = [];
+  //   for (let i = 0; i < 3; i++) {
+  //     visible.push(data[(currentIndex + i) % data.length]);
+  //   }
+  //   return visible;
+  // };
 
   return (
     <div className="w-full bg-white py-12">
@@ -60,8 +77,9 @@ export default function Latest() {
         </h2>
 
         {/* The animated accent line */}
-        <div className="h-[2px] mt-4 animate-grow-line origin-left"></div>
+        <div className="h-[2px] mt-4 bg-gradient-to-r from-orange-500 to-transparent w-32"></div>
       </div>
+
       {/* Slider Section */}
       <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-8">
         {/* Navigation Buttons */}
@@ -83,18 +101,38 @@ export default function Latest() {
 
         {/* Cards Container */}
         <div className="overflow-hidden">
-          {/* Mobile View - Single Card */}
+          {/* Mobile View - Single Card with Smooth Transition */}
           <div className="block lg:hidden">
-            <div className="flex justify-center">
-              <NewsCard data={data[currentIndex]} />
+            <div className="relative w-full">
+              <div 
+                className="flex transition-transform duration-500 ease-in-out"
+                style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+              >
+                {data.map((item, index) => (
+                  <div key={index} className="w-full flex-shrink-0 px-2">
+                    <NewsCard data={item} />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
-          {/* Desktop View - Three Cards */}
-          <div className="hidden lg:grid lg:grid-cols-3 gap-6">
-            {getVisibleCards().map((item, index) => (
-              <NewsCard key={index} data={item} />
-            ))}
+          {/* Desktop View - Three Cards with Smooth Transition */}
+          <div className="hidden lg:block">
+            <div className="relative w-full overflow-hidden">
+              <div 
+                className="flex transition-transform duration-700 ease-in-out"
+                style={{ 
+                  transform: `translateX(-${currentIndex * (100 / 3)}%)`,
+                }}
+              >
+                {[...data, ...data].map((item, index) => (
+                  <div key={index} className="w-1/3 flex-shrink-0 px-3">
+                    <NewsCard data={item} />
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
 
@@ -103,13 +141,26 @@ export default function Latest() {
           {data.map((_, index) => (
             <button
               key={index}
-              onClick={() => setCurrentIndex(index)}
+              onClick={() => {
+                setCurrentIndex(index);
+                setIsAutoPlay(false);
+              }}
               className={`h-2 rounded-full transition-all duration-300 ${
                 index === currentIndex ? "w-8 bg-orange-500" : "w-2 bg-gray-300"
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}
+        </div>
+
+        {/* Auto-play toggle */}
+        <div className="flex justify-center mt-4">
+          <button
+            onClick={() => setIsAutoPlay(!isAutoPlay)}
+            className="text-sm text-gray-600 hover:text-orange-500 transition-colors"
+          >
+            {isAutoPlay ? "⏸ Pause Auto-play" : "▶ Start Auto-play"}
+          </button>
         </div>
       </div>
     </div>
@@ -118,7 +169,7 @@ export default function Latest() {
 
 function NewsCard({ data }) {
   return (
-    <div className="w-full max-w-sm mx-auto bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+    <div className="w-full bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
       {/* Image Container */}
       <div className="h-64 w-full overflow-hidden">
         <img
