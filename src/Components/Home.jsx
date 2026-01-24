@@ -15,7 +15,7 @@ export default function Home() {
     >
     </div>
      <div id="about" className="w-full py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-white">
-      <div className="max-w-7xl mx-auto">
+       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
           {/* Left Content */}
           <div className="w-full lg:w-1/2 flex flex-col">

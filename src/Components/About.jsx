@@ -1,14 +1,7 @@
-import React from 'react';
 import { FaUsers, FaHome, FaStar, FaHandshake, FaChartLine, FaShieldAlt, FaPlay } from 'react-icons/fa';
 import { MdVerified } from 'react-icons/md';
 
 export default function About() {
-  const stats = [
-    { number: '500+', label: 'Properties Sold' },
-    { number: '15+', label: 'Years Experience' },
-    { number: '98%', label: 'Client Satisfaction' },
-    { number: '50+', label: 'Awards Won' }
-  ];
 
   const values = [
     {
@@ -42,7 +35,7 @@ export default function About() {
       <div 
         className='relative w-full h-96 flex justify-center items-center bg-cover bg-center'
         style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=1600&h=900&fit=crop')"
+          backgroundImage: "url('https://images.unsplash.com/photo-1609550681228-e79523be3e3e?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"
         }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-60"></div>
@@ -52,22 +45,10 @@ export default function About() {
         </div>
       </div>
 
-      {/* Stats Bar */}
-      <div className="w-full bg-orange-500 py-12">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <h3 className="text-white text-4xl lg:text-5xl font-bold mb-2">{stat.number}</h3>
-                <p className="text-white text-lg font-light">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
+   
       {/* Who We Are Section */}
       <div className="w-full py-20 px-4 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
+        <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>   
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
@@ -102,7 +83,7 @@ export default function About() {
 
       {/* Our Values */}
       <div className="w-full py-20 px-4">
-        <div className="max-w-7xl mx-auto">
+         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>   
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-4">Our Core Values</h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
@@ -126,7 +107,7 @@ export default function About() {
 
       {/* Our Mission Section */}
       <div className="w-full py-20 px-4 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
+         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>   
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1 relative">
               <img
@@ -152,7 +133,7 @@ export default function About() {
 
       {/* Why Choose Quarter */}
       <div className="w-full py-20 px-4">
-        <div className="max-w-6xl mx-auto">
+        <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>   
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-4">Why Choose Quarter</h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
@@ -198,7 +179,7 @@ export default function About() {
             Let's discuss how Quarter can help you achieve your real estate goals
           </p>
           <button 
-          onclick={handleWhatsAppClick}
+          onClick={handleWhatsAppClick}
           className="bg-orange-500 hover:bg-orange-600 text-white font-bold text-lg px-12 py-4 rounded-full transition-colors shadow-lg">
             Contact Us Today
           </button>

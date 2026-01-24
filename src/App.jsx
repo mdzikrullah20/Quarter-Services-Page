@@ -6,7 +6,7 @@ import NavTop from "./Components/NavTop";
 import Footer from "./Components/Footer";
 import News from "./Components/News";
 import Contact from "./Components/Contact";
-import Property from "./Components/Property";
+import Properties from "./Components/Properties";
 function App() {
   return (
     <>
@@ -15,7 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Services />} />
           <Route path="/about" element={<About />} />
-          <Route path="/property" element={<Property />} />
+          <Route path="/properties" element={<Properties />} />
           <Route path="news" element={<News/>}/>
           <Route path="contact" element={<Contact />} />    
         </Routes>
