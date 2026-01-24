@@ -7,6 +7,7 @@ import { BiMessageRoundedDots } from 'react-icons/bi';
 export default function Footer() {
   const [isQuoteFormOpen, setIsQuoteFormOpen] = useState(false);
   const [formData, setFormData] = useState({
+  
     name: '',
     email: '',
     phone: '',

@@ -51,22 +51,11 @@ export default function Latest() {
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % data.length);
-    setIsAutoPlay(false);
   };
 
   const prevSlide = () => {
     setCurrentIndex((prev) => (prev - 1 + data.length) % data.length);
-    setIsAutoPlay(false);
   };
-
-  // Remove this function as it's not being used
-  // const getVisibleCards = () => {
-  //   const visible = [];
-  //   for (let i = 0; i < 3; i++) {
-  //     visible.push(data[(currentIndex + i) % data.length]);
-  //   }
-  //   return visible;
-  // };
 
   return (
     <div className="w-full bg-white py-12">
@@ -143,7 +132,6 @@ export default function Latest() {
               key={index}
               onClick={() => {
                 setCurrentIndex(index);
-                setIsAutoPlay(false);
               }}
               className={`h-2 rounded-full transition-all duration-300 ${
                 index === currentIndex ? "w-8 bg-orange-500" : "w-2 bg-gray-300"
@@ -159,7 +147,7 @@ export default function Latest() {
             onClick={() => setIsAutoPlay(!isAutoPlay)}
             className="text-sm text-gray-600 hover:text-orange-500 transition-colors"
           >
-            {isAutoPlay ? "⏸ Pause Auto-play" : "▶ Start Auto-play"}
+            {/* {isAutoPlay ? "⏸ Pause Auto-play" : "▶ Start Auto-play"} */}
           </button>
         </div>
       </div>

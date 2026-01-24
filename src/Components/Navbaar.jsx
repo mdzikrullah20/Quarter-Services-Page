@@ -14,14 +14,14 @@ function Navbar() {
 
   // Sample data for search - Replace this with your actual data
   const allData = [
-    { id: 1, title: 'Recently Added', type: 'Property', link: '/property/1' },
-    { id: 2, title: 'Modern Apartment in Delhi', type: 'Property', link: '/property/2' },
-    { id: 3, title: 'Real Estate Market Trends 2026', type: 'News', link: '/news/1' },
-    { id: 4, title: 'Investment Tips for Property', type: 'News', link: '/news/2' },
+    { id: 1, title: 'Modern Villa', type: 'Property', link: '/property/' },
+    { id: 2, title: 'Modern Apartment in Delhi', type: 'Property', link: '/property/' },
+    { id: 3, title: 'Real Estate Market Trends 2026', type: 'News', link: '/news/' },
+    { id: 4, title: 'Investment Tips for Property', type: 'News', link: '/news/' },
     { id: 5, title: 'About Our Company', type: 'Page', link: '/about' },
     { id: 6, title: 'Contact Information', type: 'Page', link: '/contact' },
     { id: 7, title: 'Beachfront Property in Goa', type: 'Property', link: '/property/3' },
-    { id: 8, title: 'How to Buy Your First Home', type: 'News', link: '/news/3' },
+    { id: 8, title: 'How to Buy Your First Home', type: 'News', link: '/news/' },
   ];
 
   const handleSearch = (value) => {
@@ -49,11 +49,11 @@ function Navbar() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8">
-            <Link to="/" className="text-gray-700 hover:text-blue-600 transition">Home</Link>
-            <Link to="/about" className="text-gray-700 hover:text-blue-600 transition">About</Link>
-            <Link to="/property" className="text-gray-700 hover:text-blue-600 transition">Property</Link>
-            <Link to="/news" className="text-gray-700 hover:text-blue-600 transition">News</Link>
-            <Link to="/contact" className="text-gray-700 hover:text-blue-600 transition">Contact</Link>
+            <Link to="/" className="text-gray-700 hover:text-orange-500 transition">Home</Link>
+            <Link to="/about" className="text-gray-700 hover:text-orange-500 transition">About</Link>
+            <Link to="/property" className="text-gray-700 hover:text-orange-500 transition">Property</Link>
+            <Link to="/news" className="text-gray-700 hover:text-orange-500 transition">News</Link>
+            <Link to="/contact" className="text-gray-700 hover:text-orange-500 transition">Contact</Link>
           </div>
 
           {/* Icons and Mobile Menu Button */}
@@ -61,22 +61,22 @@ function Navbar() {
             {/* Search Icon */}
             <button
               onClick={() => setIsSearchOpen(!isSearchOpen)}
-              className="text-gray-700 hover:text-blue-600 transition text-xl"
+              className="text-gray-700 hover:text-orange-500 transition text-xl"
             >
               <CgSearch />
             </button>
 
-            <Link to="/admin" className="text-gray-700 hover:text-blue-600 transition text-xl hidden md:block">
+            <Link to="/admin" className="text-gray-700 hover:text-orange-500 transition text-xl hidden md:block">
               <RiAdminFill />
             </Link>
 
-            <Link to="/cart" className="text-gray-700 hover:text-blue-600 transition text-xl hidden md:block">
+            <Link to="/cart" className="text-gray-700 hover:text-orange-500 transition text-xl hidden md:block">
               <FaShoppingCart />
             </Link>
 
             {/* Mobile Menu Toggle */}
             <button
-              className="md:hidden text-gray-700 hover:text-blue-600 transition text-2xl"
+              className="md:hidden text-gray-700 hover:text-orange-500 transition text-2xl"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? <HiX /> : <HiMenu />}
@@ -138,29 +138,26 @@ function Navbar() {
         {isMenuOpen && (
           <div className="md:hidden border-t py-4">
             <div className="flex flex-col space-y-3">
-              <Link to="/" onClick={() => setIsMenuOpen(false)} className="text-gray-700 hover:text-blue-600 transition px-2 py-1">
+              <Link to="/" onClick={() => setIsMenuOpen(false)} className="text-gray-700 hover:text-orange-500 transition px-2 py-1">
                 Home
               </Link>
-              <Link to="/about" onClick={() => setIsMenuOpen(false)} className="text-gray-700 hover:text-blue-600 transition px-2 py-1">
+              <Link to="/about" onClick={() => setIsMenuOpen(false)} className="text-gray-700 hover:text-orange-500 transition px-2 py-1">
                 About
               </Link>
-              <Link to="/property" onClick={() => setIsMenuOpen(false)} className="text-gray-700 hover:text-blue-600 transition px-2 py-1">
+              <Link to="/property" onClick={() => setIsMenuOpen(false)} className="text-gray-700 hover:text-orange-500 transition px-2 py-1">
                 Property
               </Link>
-              <Link to="/news" onClick={() => setIsMenuOpen(false)} className="text-gray-700 hover:text-blue-600 transition px-2 py-1">
+              <Link to="/news" onClick={() => setIsMenuOpen(false)} className="text-gray-700 hover:text-orange-500 transition px-2 py-1">
                 News
               </Link>
-              <Link to="/pages" onClick={() => setIsMenuOpen(false)} className="text-gray-700 hover:text-blue-600 transition px-2 py-1">
-                Pages
-              </Link>
-              <Link to="/contact" onClick={() => setIsMenuOpen(false)} className="text-gray-700 hover:text-blue-600 transition px-2 py-1">
+              <Link to="/contact" onClick={() => setIsMenuOpen(false)} className="text-gray-700 hover:text-orange-500 transition px-2 py-1">
                 Contact
               </Link>
               <div className="border-t pt-3 flex space-x-4 px-2">
-                <Link to="/admin" className="text-gray-700 hover:text-blue-600 transition text-xl">
+                <Link to="/admin" className="text-gray-700 hover:text-orange-500 transition text-xl">
                   <RiAdminFill />
                 </Link>
-                <Link to="/cart" className="text-gray-700 hover:text-blue-600 transition text-xl">
+                <Link to="/cart" className="text-gray-700 hover:text-orange-500 transition text-xl">
                   <FaShoppingCart />
                 </Link>
               </div>
