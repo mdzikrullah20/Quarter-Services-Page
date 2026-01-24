@@ -7,6 +7,7 @@ import { BiMessageRoundedDots } from 'react-icons/bi';
 export default function Footer() {
   const [isQuoteFormOpen, setIsQuoteFormOpen] = useState(false);
   const [formData, setFormData] = useState({
+  
     name: '',
     email: '',
     phone: '',
@@ -208,34 +209,34 @@ Message: ${formData.message}`;
               <h3 className='text-white text-lg sm:text-xl font-bold mb-4 sm:mb-6'>Quick Links</h3>
               <ul className='space-y-3'>
                 <li>
-                  <a href='/' className='flex items-center gap-2 text-sm hover:text-orange-500 transition-colors group'>
+                  <Link to="/about"className='flex items-center gap-2 text-sm hover:text-orange-500 transition-colors group'>
                     <IoIosArrowForward className='text-orange-500 text-xs' />
                     About Us
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href='/' className='flex items-center gap-2 text-sm hover:text-orange-500 transition-colors group'>
+                  <Link to="/properties" className='flex items-center gap-2 text-sm hover:text-orange-500 transition-colors group'>
                     <IoIosArrowForward className='text-orange-500 text-xs' />
                     Properties
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href='/' className='flex items-center gap-2 text-sm hover:text-orange-500 transition-colors group'>
+                  <Link to="/services" className='flex items-center gap-2 text-sm hover:text-orange-500 transition-colors group'>
                     <IoIosArrowForward className='text-orange-500 text-xs' />
                     Services
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href='/' className='flex items-center gap-2 text-sm hover:text-orange-500 transition-colors group'>
+                  <Link to="/blog" className='flex items-center gap-2 text-sm hover:text-orange-500 transition-colors group'>
                     <IoIosArrowForward className='text-orange-500 text-xs' />
                     News & Blog
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href='/' className='flex items-center gap-2 text-sm hover:text-orange-500 transition-colors group'>
+                  <Link to="/contact" className='flex items-center gap-2 text-sm hover:text-orange-500 transition-colors group'>
                     <IoIosArrowForward className='text-orange-500 text-xs' />
                     Contact Us
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -244,34 +245,34 @@ Message: ${formData.message}`;
               <h3 className='text-white text-lg sm:text-xl font-bold mb-4 sm:mb-6'>Our Services</h3>
               <ul className='space-y-3'>
                 <li>
-                  <a href='/' className='flex items-center gap-2 text-sm hover:text-orange-500 transition-colors group'>
+                  <Link to="/" className='flex items-center gap-2 text-sm hover:text-orange-500 transition-colors group'>
                     <IoIosArrowForward className='text-orange-500 text-xs' />
                     Buy a Home
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href='/' className='flex items-center gap-2 text-sm hover:text-orange-500 transition-colors group'>
+                  <Link to="/" className='flex items-center gap-2 text-sm hover:text-orange-500 transition-colors group'>
                     <IoIosArrowForward className='text-orange-500 text-xs' />
                     Rent a Home
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href='/' className='flex items-center gap-2 text-sm hover:text-orange-500 transition-colors group'>
+                  <Link to="/" className='flex items-center gap-2 text-sm hover:text-orange-500 transition-colors group'>
                     <IoIosArrowForward className='text-orange-500 text-xs' />
                     Sell a Home
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href='/' className='flex items-center gap-2 text-sm hover:text-orange-500 transition-colors group'>
+                  <Link to="/property-management" className='flex items-center gap-2 text-sm hover:text-orange-500 transition-colors group'>
                     <IoIosArrowForward className='text-orange-500 text-xs' />
                     Property Management
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href='/' className='flex items-center gap-2 text-sm hover:text-orange-500 transition-colors group'>
+                  <Link to="/home-valuation" className='flex items-center gap-2 text-sm hover:text-orange-500 transition-colors group'>
                     <IoIosArrowForward className='text-orange-500 text-xs' />
                     Home Valuation
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
