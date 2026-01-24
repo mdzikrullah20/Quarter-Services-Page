@@ -9,9 +9,9 @@ export default function RecentlyAdded() {
       id: 1,
       image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop',
       address: '100 West 93rd Street, Apt 17C',
-      price: 1500,
+      price: 1800,
       status: 'For Rent',
-      statusColor: 'bg-green-500',
+      statusColor: 'bg-blue-500',
       beds: 2,
       bathrooms: 2,
       sqft: 1700
@@ -20,9 +20,9 @@ export default function RecentlyAdded() {
       id: 2,
       image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop',
       address: '110 Livingston Street, Apt 17M',
-      price: 1500,
+      price: 2000,
       status: 'For Rent',
-      statusColor: 'bg-green-500',
+      statusColor: 'bg-blue-500',
       beds: 8,
       bathrooms: 6,
       sqft: 2400
@@ -31,9 +31,9 @@ export default function RecentlyAdded() {
       id: 3,
       image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop',
       address: '245 East 80th Street, Apt 2-B',
-      price: 1500,
+      price: 1300,
       status: 'For Sale',
-      statusColor: 'bg-pink-500',
+      statusColor: 'bg-sky-500',
       beds: 2,
       bathrooms: 2,
       sqft: 1700
@@ -42,9 +42,9 @@ export default function RecentlyAdded() {
       id: 4,
       image: 'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&h=600&fit=crop',
       address: '561 10th Avenue, Apt 30J',
-      price: 1500,
+      price: 1700,
       status: 'For Rent',
-      statusColor: 'bg-green-500',
+      statusColor: 'bg-bluess-500',
       beds: 2,
       bathrooms: 2,
       sqft: 1700
@@ -53,9 +53,9 @@ export default function RecentlyAdded() {
       id: 5,
       image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&h=600&fit=crop',
       address: '605 West 42nd Street, Apt 63W',
-      price: 1500,
+      price: 2200,
       status: 'For Sell',
-      statusColor: 'bg-pink-500',
+      statusColor: 'bg-sky-500',
       beds: 8,
       bathrooms: 6,
       sqft: 2400
@@ -66,7 +66,7 @@ export default function RecentlyAdded() {
       address: '42-12 28th Street, Apt 4IK',
       price: 1500,
       status: 'For Rent',
-      statusColor: 'bg-green-500',
+      statusColor: 'bg-blue-500',
       beds: 2,
       bathrooms: 2,
       sqft: 1700
@@ -75,7 +75,7 @@ export default function RecentlyAdded() {
 
   return (
     <div className='w-full bg-gray-50 py-16 px-4 sm:px-8'>
-      <div className='max-w-7xl mx-auto'>
+       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>   
         {/* Header */}
          <div className='mb-10 sm:mb-12'>
           <h2 className='text-4xl sm:text-5xl font-bold text-gray-900'>
@@ -97,7 +97,7 @@ export default function RecentlyAdded() {
 
 function PropertyCard({ property }) {
   return (
-    <div className='bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 group cursor-pointer'>
+    <div className='bg-white rounded-lg overflow-hidden shadow-md hover:shadow-md transition-shadow duration-300 group cursor-pointer'>
       {/* Image Container */}
       <div className='relative h-64 overflow-hidden'>
         <img 
@@ -114,8 +114,8 @@ function PropertyCard({ property }) {
       {/* Content */}
       <div className='p-5 border-l-4'>
         {/* Address */}
-        <h3 className='text-lg font-semibold text-gray-800 mb-3 hover:text-green-500 transition-colors cursor-pointer'>
-          {property.address}
+        <h3 className='text-lg font-semibold text-gray-800 mb-3 hover:text-orange-500 transition-colors cursor-pointer'>
+          {property.address}s
         </h3>
 
         {/* Price */}
@@ -127,15 +127,15 @@ function PropertyCard({ property }) {
         {/* Property Details */}
         <div className='flex items-center justify-between text-gray-600 text-sm pt-4 border-t border-gray-200'>
           <div className='flex items-center gap-1'>
-            <IoBedOutline className='w-5 h-5 text-green-500' />
+            <IoBedOutline className='w-5 h-5 text-orange-500' />
             <span className='font-medium'>{property.beds} Bed</span>
           </div>
           <div className='flex items-center gap-1'>
-            <PiBathtubLight className='w-5 h-5 text-green-500' />
+            <PiBathtubLight className='w-5 h-5 text-orange-500' />
             <span className='font-medium'>{property.bathrooms} Bathroom</span>
           </div>
           <div className='flex items-center gap-1'>
-            <BiArea className='w-5 h-5 text-green-500' />
+            <BiArea className='w-5 h-5 text-orange-500' />
             <span className='font-medium'>{property.sqft} sqft</span>
           </div>
         </div>

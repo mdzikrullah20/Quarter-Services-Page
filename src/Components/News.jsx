@@ -6,7 +6,7 @@ import {
   Home,
   DollarSign,
 } from "lucide-react";
-
+import { Link } from "react-router-dom";
 export default function News() {
   const featuredNews = {
     title: "Housing Market Shows Strong Growth in Q4 2025",
@@ -192,10 +192,10 @@ export default function News() {
                   <User className="w-4 h-4 mr-2" />
                   <span>{featuredNews.author}</span>
                 </div>
-                <button className="flex items-center text-blue-600 font-semibold hover:text-blue-700 transition-colors">
+                <Link to='/news/featured' className="flex items-center text-blue-600 font-semibold hover:text-blue-700 transition-colors">
                   Read Full Article
                   <ArrowRight className="w-5 h-5 ml-2" />
-                </button>
+                </Link>
               </div>
             </div>
           </div>

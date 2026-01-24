@@ -3,6 +3,7 @@ import { MdEmail, MdPhone, MdLocationOn } from 'react-icons/md';
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
 import { IoIosArrowForward, IoMdClose } from 'react-icons/io';
 import { BiMessageRoundedDots } from 'react-icons/bi';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   const [isQuoteFormOpen, setIsQuoteFormOpen] = useState(false);
@@ -227,7 +228,7 @@ Message: ${formData.message}`;
                   </Link>
                 </li>
                 <li>
-                  <Link to="/blog" className='flex items-center gap-2 text-sm hover:text-orange-500 transition-colors group'>
+                  <Link to="/news" className='flex items-center gap-2 text-sm hover:text-orange-500 transition-colors group'>
                     <IoIosArrowForward className='text-orange-500 text-xs' />
                     News & Blog
                   </Link>

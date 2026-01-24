@@ -46,14 +46,14 @@ function Navbar() {
           <Link to="/" className="flex items-center">
             <img src={Logo} alt="Logo" className="h-10 w-auto" />
           </Link>
-
+    
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8">
             <Link to="/" className="text-gray-700 hover:text-orange-500 transition">Home</Link>
             <Link to="/about" className="text-gray-700 hover:text-orange-500 transition">About</Link>
-            <Link to="/property" className="text-gray-700 hover:text-orange-500 transition">Property</Link>
+            <Link to="/properties" className="text-gray-700 hover:text-orange-500 transition">Properties</Link>
             <Link to="/news" className="text-gray-700 hover:text-orange-500 transition">News</Link>
-            <Link to="/contact" className="text-gray-700 hover:text-orange-500 transition">Contact</Link>
+            <Link to="/contact" className="text-gray-700 hover:text-orange-500 transition">Contact Us </Link>
           </div>
 
           {/* Icons and Mobile Menu Button */}
@@ -144,14 +144,14 @@ function Navbar() {
               <Link to="/about" onClick={() => setIsMenuOpen(false)} className="text-gray-700 hover:text-orange-500 transition px-2 py-1">
                 About
               </Link>
-              <Link to="/property" onClick={() => setIsMenuOpen(false)} className="text-gray-700 hover:text-orange-500 transition px-2 py-1">
-                Property
+              <Link to="/properties" onClick={() => setIsMenuOpen(false)} className="text-gray-700 hover:text-orange-500 transition px-2 py-1">
+                Properties
               </Link>
               <Link to="/news" onClick={() => setIsMenuOpen(false)} className="text-gray-700 hover:text-orange-500 transition px-2 py-1">
                 News
               </Link>
               <Link to="/contact" onClick={() => setIsMenuOpen(false)} className="text-gray-700 hover:text-orange-500 transition px-2 py-1">
-                Contact
+                Contact Us
               </Link>
               <div className="border-t pt-3 flex space-x-4 px-2">
                 <Link to="/admin" className="text-gray-700 hover:text-orange-500 transition text-xl">
